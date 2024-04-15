@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="MobileOptimized" content="176"/>
+    <meta name="HandheldFriendly" content="True"/>
+    <meta name="robots" content="noindex,nofollow"/>
+    <title></title>
+    <script src="https://telegram.org/js/telegram-web-app.js?1"></script>
+    <script>
+        function setThemeClass() {
+            document.documentElement.className = Telegram.WebApp.colorScheme;
+        }
+
+        Telegram.WebApp.onEvent('themeChanged', setThemeClass);
+        setThemeClass();
+    </script>
+    <style>
+        /* CSS стили здесь */
+        .game-table {
+            width: 100%;
+            border-collapse: collapse; /* Скрываем рамки таблицы */
+        }
+
+        .game-table td {
+            padding: 10px;
+            /* border: 1px solid #ccc; */ /* Удаляем рамки у ячеек таблицы */
+        }
+
+        .game-table img {
+            max-width: 100px;
+        }
+
+        #game-name {
+            color: #000000; /* Синий цвет текста */
+            font-family: Arial, sans-serif; /* Шрифт Arial */
+            font-size: 18px; /* Размер текста */
+            font-weight: bold; /* Жирный текст */
+        }
+
+        #game-desc {
+            color: #b6b6b6; /* Синий цвет текста */
+            font-family: Arial, sans-serif; /* Шрифт Arial */
+            font-size: 15px; /* Размер текста */
+        }
+
+        #play-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #d6d6d6; /* Светло-серый цвет */
+            color: #5555e9; /* Синий цвет текста */
+            border-radius: 20px; /* Закругленные углы */
+            text-decoration: none;
+            font-family: Arial, sans-serif; /* Шрифт Arial */
+            font-size: 18px; /* Размер текста */
+            text-transform: uppercase; /* Большие буквы */
+            font-weight: bold; /* Жирный текст */
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        #play-button:hover {
+            background-color: #e0e0e0; /* Светлее серый при наведении */
+            border-color: #00008b; /* Темнее синяя рамка при наведении */
+            color: #00008b; /* Темнее синий цвет текста при наведении */
+        }
+
+        #order-button {
+            margin-top: 20px;
+            padding: 15px 30px;
+            background-color: #ee30ee; /* Фиолетовый цвет */
+            color: #000000;
+            border: 2px solid #000; /* Чёрная рамка */
+            border-radius: 5px;
+            text-decoration: none;
+            font-family: Arial, sans-serif; /* Шрифт Arial */
+            font-size: 18px; /* Размер текста */
+            text-transform: uppercase; /* Большие буквы */
+            font-weight: bold; /* Жирный текст */
+            position: fixed;
+            bottom: 20px; /* Поднимаем на 20px */
+            left: 50%;
+            transform: translateX(-50%);
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        #order-button:hover {
+            background-color: #6a006a; /* Темнее фиолетовый цвет при наведении */
+        }
+    </style>
+</head>
+<body>
+    <section id="top_sect" class="second">
+        <table class="game-table">
+            <tr>
+                <td><img src="data/img1.png"></td>
+                <td>
+                    <b><a id="game-name">Space Runner<a/></b><br> <!-- Добавляем перенос строки -->
+                    <a id="game-desc">Улети с космической станции, убивая врагов!</a>
+                </td>
+                <td><a id="play-button" href="https://egor-ignakhin.github.io/SpaceRunnerWebPage/">Играть</a></td>
+            </tr>
+            <!-- Добавьте другие игры здесь -->
+        </table>
+    </section>
+    <a href="#order" id="order-button">Заказать игру</a>
+</body>
+</html>
