@@ -22,5 +22,13 @@
         "imagePath": "data/img3.png",
         "buttonType": "soon-button",
         "gameStatus": "Скоро"
+    },
+    {
+        "name": "Домино",
+        "desc": "Классическая игра в домино",
+        "playLink": "",
+        "imagePath": "data/img4.png",
+        "buttonType": "soon-button",
+        "gameStatus": "Скоро"
     }
 ]
