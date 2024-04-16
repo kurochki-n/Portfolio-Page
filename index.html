@@ -16,21 +16,20 @@
             document.documentElement.className = Telegram.WebApp.colorScheme;
         }
 
+        Telegram.WebApp.expand();
         Telegram.WebApp.onEvent('themeChanged', setThemeClass);
         setThemeClass();
     </script>
     <style>
-        /* CSS стили здесь */
         .game-table {
             margin-top: 10vw;
             width: 100%;
-            border-collapse: collapse; /* Скрываем рамки таблицы */
+            border-collapse: collapse;
         }
 
         .game-table td {
             padding: 1vw;
             vertical-align: middle;
-            /* border: 1px solid #ccc; */ /* Удаляем рамки у ячеек таблицы */
         }
 
         .game-table img {
@@ -41,51 +40,45 @@
         }
 
         #game-name {
-            color: #000000; /* Синий цвет текста */
-            font-family: Arial, sans-serif; /* Шрифт Arial */
-            font-size: 4vw; /* Размер текста */
-            font-weight: bold; /* Жирный текст */
+            color: #000000;
+            font-family: Arial, sans-serif;
+            font-size: 4vw;
+            font-weight: bold;
         }
 
         #game-desc {
-            color: #b6b6b6; /* Синий цвет текста */
-            font-family: Arial, sans-serif; /* Шрифт Arial */
-            font-size: 3vw; /* Размер текста */
+            color: #b6b6b6;
+            font-family: Arial, sans-serif;
+            font-size: 3vw;
         }
 
         #play-button {
             margin-top: 2vw;
             padding: 1vw 3vw;
-            background-color: #d6d6d6; /* Светло-серый цвет */
-            color: #2e6ffc; /* Синий цвет текста */
-            border-radius: 3vw; /* Закругленные углы */
+            background-color: #d6d6d6;
+            color: #2a6eff;
+            border-radius: 3vw;
             text-decoration: none;
-            font-family: Arial, sans-serif; /* Шрифт Arial */
-            font-size: 3.5vw; /* Размер текста */
-            text-transform: uppercase; /* Большие буквы */
-            font-weight: bold; /* Жирный текст */
+            font-family: Arial, sans-serif;
+            font-size: 3.5vw;
+            text-transform: uppercase;
+            font-weight: bold;
             display: inline-block;
             cursor: pointer;
             vertical-align: middle;
         }
 
-        #play-button:hover {
-            background-color: #e0e0e0; /* Светлее серый при наведении */
-            border-color: #00008b; /* Темнее синяя рамка при наведении */
-            color: #00008b; /* Темнее синий цвет текста при наведении */
-        }
-
         #soon-button {
             margin-top: 2vw;
             padding: 1vw 3vw;
-            background-color: #bebebe; /* Светло-серый цвет */
-            color: #2e6ffc; /* Синий цвет текста */
-            border-radius: 3vw; /* Закругленные углы */
+            background-color: #bebebe;
+            color: #2a6eff;
+            border-radius: 3vw;
             text-decoration: none;
-            font-family: Arial, sans-serif; /* Шрифт Arial */
-            font-size: 3.5vw; /* Размер текста */
-            text-transform: uppercase; /* Большие буквы */
-            font-weight: bold; /* Жирный текст */
+            font-family: Arial, sans-serif;
+            font-size: 3.5vw;
+            text-transform: uppercase;
+            font-weight: bold;
             display: inline-block;
             cursor: pointer;
             vertical-align: middle;
@@ -94,26 +87,22 @@
         #order-button {
             margin-top: 2vw;
             padding: 3vw 7vw;
-            background-color: #f565f5; /* Фиолетовый цвет */
+            background-color: #f565f5;
             color: #000000;
-            border: 2px solid #000; /* Чёрная рамка */
+            border: 2px solid #000;
             border-radius: 5vw;
             text-decoration: none;
-            font-family: Arial, sans-serif; /* Шрифт Arial */
-            font-size: 4vw; /* Размер текста */
-            text-transform: uppercase; /* Большие буквы */
-            font-weight: bold; /* Жирный текст */
+            font-family: Arial, sans-serif;
+            font-size: 4vw;
+            text-transform: uppercase;
+            font-weight: bold;
             position: fixed;
-            bottom: 20px; /* Поднимаем на 20px */
+            bottom: 20px;
             left: 50%;
             transform: translateX(-50%);
             display: inline-block;
             cursor: pointer;
             z-index: 9999;
-        }
-
-        #order-button:hover {
-            background-color: #6a006a; /* Темнее фиолетовый цвет при наведении */
         }
     </style>
 </head>
@@ -123,7 +112,7 @@
             <tr>
                 <td><img src="data/img1.png"></td>
                 <td>
-                    <b><a id="game-name">Space Runner<a/></b><br> <!-- Добавляем перенос строки -->
+                    <b><a id="game-name">Space Runner<a/></b><br>
                     <a id="game-desc">Улети с космической станции, убивая врагов!</a>
                 </td>
                 <td><a id="play-button" href="https://egor-ignakhin.github.io/SpaceRunnerWebPage/">Играть</a></td>
@@ -131,7 +120,7 @@
             <tr>
                 <td><img src="data/img2.png"></td>
                 <td>
-                    <b><a id="game-name">Дровосек Рубидер<a/></b><br> <!-- Добавляем перенос строки -->
+                    <b><a id="game-name">Дровосек Рубидер<a/></b><br>
                     <a id="game-desc">Руби деревья!</a>
                 </td>
                 <td><a id="soon-button">Скоро</a></td>
@@ -139,7 +128,7 @@
             <tr>
                 <td><img src="data/img3.png"></td>
                 <td>
-                    <b><a id="game-name">Диванная пирамида<a/></b><br> <!-- Добавляем перенос строки -->
+                    <b><a id="game-name">Диванная пирамида<a/></b><br>
                     <a id="game-desc">Построй башню из диванов!</a>
                 </td>
                 <td><a id="soon-button">Скоро</a></td>
