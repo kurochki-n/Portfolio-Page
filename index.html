@@ -18,6 +18,7 @@
 
         Telegram.WebApp.expand();
         Telegram.WebApp.onEvent('themeChanged', setThemeClass);
+        Telegram.WebApp.onEvent('viewportChanged', () => Telegram.WebApp.expand())
         setThemeClass();
     </script>
     <style>
