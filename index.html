@@ -23,10 +23,19 @@
     <style>
         body {
             background-color: #f0f0f0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
+
+        .content-wrapper {
+            flex: 1; /* Занимает все доступное пространство */
+            overflow-y: auto; /* Разрешаем вертикальную прокрутку при необходимости */
+          }
 
         .game-table {
             margin-top: 3vw;
+            margin-bottom: 15vw;
             width: 100%;
             border-collapse: collapse;
         }
@@ -115,41 +124,43 @@
     </style>
 </head>
 <body>
-    <section id="top_sect" class="second">
-        <table class="game-table" id="game-table">
-        </table>
-    </section>
-    <a href="#order" id="order-button">Заказать игру</a>
+    <div class="content-wrapper">
+        <section id="top_sect" class="second">
+            <table class="game-table" id="game-table">
+            </table>
+        </section>
+        <a href="#order" id="order-button">Заказать игру</a>
 
-    <script>
-        function createGameHTML(gameName, gameDesc, playLink, imagePath, buttonType, gameStatus) {
-            return `
-                <tr>
-                    <td><img src="${imagePath}"></td>
-                    <td>
-                        <b><a id="game-name">${gameName}</a></b><br>
-                        <a id="game-desc">${gameDesc}</a>
-                    </td>
-                    <td><a id="${buttonType}" href="${playLink}">${gameStatus}</a></td>
-                </tr>
-            `;
-        }
+        <script>
+            function createGameHTML(gameName, gameDesc, playLink, imagePath, buttonType, gameStatus) {
+                return `
+                    <tr>
+                        <td><img src="${imagePath}"></td>
+                        <td>
+                            <b><a id="game-name">${gameName}</a></b><br>
+                            <a id="game-desc">${gameDesc}</a>
+                        </td>
+                        <td><a id="${buttonType}" href="${playLink}">${gameStatus}</a></td>
+                    </tr>
+                `;
+            }
 
-        function loadGames() {
-            const gamesTable = document.getElementById('game-table');
-            
-            fetch('games.json')
-                .then(response => response.json())
-                .then(data => {
-                    data.forEach(game => {
-                        const gameHTML = createGameHTML(game.name, game.desc, game.playLink, game.imagePath, game.buttonType, game.gameStatus);
-                        gamesTable.innerHTML += gameHTML;
-                    });
-                })
-                .catch(error => console.error('Error loading games:', error));
-        }
+            function loadGames() {
+                const gamesTable = document.getElementById('game-table');
+                
+                fetch('games.json')
+                    .then(response => response.json())
+                    .then(data => {
+                        data.forEach(game => {
+                            const gameHTML = createGameHTML(game.name, game.desc, game.playLink, game.imagePath, game.buttonType, game.gameStatus);
+                            gamesTable.innerHTML += gameHTML;
+                        });
+                    })
+                    .catch(error => console.error('Error loading games:', error));
+            }
 
-        window.onload = loadGames;
-    </script>
+            window.onload = loadGames;
+        </script>
+    </div>
 </body>
 </html>
